@@ -1,0 +1,92 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+}
+
+/* Background & Title (common for login & register) */
+.login-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title {
+  font-family: 'Sevillana', cursive;
+  font-size: 50px;
+  color: #fff;
+  background: #00897b;
+  width: 100%;
+  height: 270px;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: -40px; /* overlap effect */
+}
+
+/* Card */
+.login-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  width: 380px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Form rows */
+.login-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.login-label {
+  font-size: 14px;
+  color: #555;
+  margin-right: 10px;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: #00897b;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #00897b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background: #00796b;
+}
+
+/* Centered text helper */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 20px;
+}

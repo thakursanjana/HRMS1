@@ -1,0 +1,169 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Content Wrapper */
+.content {
+  padding: 20px;
+}
+
+/* Top Actions (Search + Add Button) */
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.top-actions input {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.top-actions input:focus {
+  border-color: #00b894;
+  box-shadow: 0 0 4px rgba(0, 184, 148, 0.4);
+}
+
+.top-actions button {
+  padding: 10px 18px;
+  background: #00b894;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.top-actions button:hover {
+  background: #00997a;
+}
+
+/* Card Style for Forms & Tables */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+/* Add Employee Form */
+form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+form input:focus {
+  border-color: #00b894;
+  box-shadow: 0 0 4px rgba(0, 184, 148, 0.4);
+}
+
+form button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background: #f1f3f6;
+}
+
+table th,
+table td {
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+}
+
+table tbody tr {
+  transition: background 0.2s;
+}
+
+table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+table th {
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #e0e6ed;
+}
+
+table td {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* Pagination Row */
+.pagination-info {
+  padding: 6px 10px;   /* reduced from 12px */
+  font-size: 8px;     /* smaller text */
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* keeps text aligned vertically */
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: #3498db;
+  border: none;
+}
+.btn-primary:hover {
+  background: #2980b9;
+}
+
+.btn-success {
+  background: #27ae60;
+  border: none;
+}
+.btn-success:hover {
+  background: #1e8449;
+}
+
+.btn-warning {
+  background: #f39c12;
+  border: none;
+  color: #fff;
+}
+.btn-warning:hover {
+  background: #d68910;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  border: none;
+}
+.btn-danger:hover {
+  background: #c0392b;
+}
