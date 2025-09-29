@@ -1,0 +1,31 @@
+/* Admin Leave Dashboard Styles */
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table th, 
+.table td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-size: 0.75rem;   
+  padding: 2px 4px;     
+  border-radius: 6px;   
+  font-weight: 500;  
+}
+
+
+.btn {
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 5px 12px;
+}

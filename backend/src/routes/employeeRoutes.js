@@ -16,13 +16,11 @@ router.get("/", async (req, res) => {
 // ADD new employee
 router.post("/", async (req, res) => {
   try {
-    // Check if employee already exists by employeeId (better than just name)
     const existing = await Employee.findOne({ employeeId: req.body.employeeId });
     if (existing) {
       return res.status(400).json({ message: "Employee already exists" });
     }
 
-    // Save everything sent from frontend
     const newEmployee = new Employee(req.body);
     await newEmployee.save();
 
@@ -33,17 +31,15 @@ router.post("/", async (req, res) => {
   }
 });
 
+// ✅ Get single employee by ID
 router.get("/:id", async (req, res) => {
   try {
     const employee = await Employee.findById(req.params.id);
-    if (!employee) {
-      return res.status(404).json({ message: "Employee not found" });
-    }
+    if (!employee) return res.status(404).json({ error: "Employee not found" });
     res.json(employee);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ error: err.message });
   }
 });
-
 
 export default router;

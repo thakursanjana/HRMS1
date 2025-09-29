@@ -11,42 +11,56 @@ const Layout = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? "open" : "collapsed"}`}>
         <h4 className="brand">Employee MS</h4>
-        <ul>
-          <li>
-            {/* Index route = Dashboard */}
-            <NavLink to="" className="nav-link" end>
-              <span className="icon">📊</span>
-              <span className="text">Dashboard</span>
+        <ul className="nav flex-column">
+          <li className="nav-item">
+            <NavLink
+              to="/admindashboard"
+              end
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
+              📊 Dashboard
             </NavLink>
           </li>
-          <li>
-            <NavLink to="employeedashboard" className="nav-link">
-              <span className="icon">👥</span>
-              <span className="text">Employees</span>
+          <li className="nav-item">
+            <NavLink
+              to="/admindashboard/employeedashboard"
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
+              👥 Employees
             </NavLink>
           </li>
-          <li>
-            <NavLink to="departments" className="nav-link">
-              <span className="icon">🏢</span>
-              <span className="text">Departments</span>
+          <li className="nav-item">
+            <NavLink
+              to="/admindashboard/department"
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
+              🏢 Departments
             </NavLink>
           </li>
-          <li>
-            <NavLink to="leaves" className="nav-link">
-              <span className="icon">📝</span>
-              <span className="text">Leaves</span>
+          <li className="nav-item">
+            <NavLink
+              to="/admindashboard/leave"
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
+              📝 Leaves
             </NavLink>
           </li>
-          <li>
-            <NavLink to="salary" className="nav-link">
-              <span className="icon">💰</span>
-              <span className="text">Salary</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="setting" className="nav-link">
-              <span className="icon">⚙</span>
-              <span className="text">Setting</span>
+          <li className="nav-item">
+            <NavLink
+              to="/admindashboard/salary"
+              className={({ isActive }) =>
+                "nav-link" + (isActive ? " active" : "")
+              }
+            >
+              💰 Salary
             </NavLink>
           </li>
         </ul>
@@ -68,6 +82,7 @@ const Layout = () => {
             onClick={() => {
               localStorage.removeItem("token");
               localStorage.removeItem("user");
+              localStorage.removeItem("role");
               navigate("/login");
             }}
           >

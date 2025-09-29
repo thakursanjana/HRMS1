@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import axios from "axios"; // ✅ import axios
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -14,16 +14,26 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // 🔹 Hardcoded admin check (bypass backend)
+    if (form.email === "admin123@gmail.com" && form.password === "admin123") {
+      localStorage.setItem("role", "admin");
+      localStorage.setItem("token", "admin-token"); // dummy token
+      navigate("/admindashboard");
+      return;
+    }
+
+    // 🔹 For all other users, go to backend
     try {
       const res = await axios.post("http://localhost:3000/api/auth/login", form);
-      localStorage.setItem("token", res.data.token); // ✅ save token
-      setMsg("Login successful!");
-      // setTimeout(() => navigate("/employeedashboard"), 1500);
-      setTimeout(() => navigate("/admindashboard"), 1500);
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("role", "user");
+      navigate("/user/dashboard");
     } catch (err) {
       setMsg(err.response?.data?.message || "Invalid credentials");
     }
   };
+
 
   return (
     <div className="login-page">
@@ -38,7 +48,7 @@ const Login = () => {
           <label>Email</label>
           <input
             type="email"
-            name="email"  // ✅ added name
+            name="email"
             placeholder="Enter Email"
             value={form.email}
             onChange={handleChange}
@@ -48,7 +58,7 @@ const Login = () => {
           <label>Password</label>
           <input
             type="password"
-            name="password"  // ✅ added name
+            name="password"
             placeholder="••••••"
             value={form.password}
             onChange={handleChange}

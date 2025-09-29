@@ -1,0 +1,12 @@
+.card {
+  border-radius: 12px;
+}
+
+input, textarea, select {
+  border-radius: 8px !important;
+}
+
+button {
+  border-radius: 8px;
+  padding: 6px 14px;
+}

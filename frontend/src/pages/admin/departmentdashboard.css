@@ -1,0 +1,53 @@
+/* Department Dashboard Styles */
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.top-actions input {
+  max-width: 300px;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table th, 
+.table td {
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn {
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 6px 14px;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
