@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Aminleave.css";
 
-const AdminLeaveDashboard = ({ leaveRequests = [], onUpdateStatus = () => {} }) => {
+const AdminLeaveDashboard = () => {
+  const [leaveRequests, setLeaveRequests] = useState([]);
+
+  useEffect(() => {
+    fetchLeaves();
+  }, []);
+
+  const fetchLeaves = async () => {
+    const res = await axios.get("http://localhost:3000/api/leaves");
+    setLeaveRequests(res.data);
+  };
+
+  const onUpdateStatus = async (id, status) => {
+    try {
+      await axios.put(`http://localhost:3000/api/leaves/${id}`, { status });
+      alert(`Leave ${status} ✅`);
+      fetchLeaves();
+    } catch (err) {
+      console.error(err);
+      alert("Error updating status ❌");
+    }
+  };
+
   return (
-    <div>
+    <div className="p-4">
       <h4>Leave Applications</h4>
       <div className="card shadow mt-3">
         <table className="table table-hover text-center align-middle mb-0">
@@ -24,7 +47,7 @@ const AdminLeaveDashboard = ({ leaveRequests = [], onUpdateStatus = () => {} }) 
           <tbody>
             {leaveRequests.length > 0 ? (
               leaveRequests.map((req, index) => (
-                <tr key={req.id}>
+                <tr key={req._id}>
                   <td>{index + 1}</td>
                   <td>{req.employeeName}</td>
                   <td>{req.department}</td>
@@ -50,13 +73,13 @@ const AdminLeaveDashboard = ({ leaveRequests = [], onUpdateStatus = () => {} }) 
                       <>
                         <button
                           className="btn btn-success btn-sm me-2"
-                          onClick={() => onUpdateStatus(req.id, "Accepted")}
+                          onClick={() => onUpdateStatus(req._id, "Accepted")}
                         >
                           Accept
                         </button>
                         <button
                           className="btn btn-danger btn-sm"
-                          onClick={() => onUpdateStatus(req.id, "Rejected")}
+                          onClick={() => onUpdateStatus(req._id, "Rejected")}
                         >
                           Reject
                         </button>
@@ -78,6 +101,5 @@ const AdminLeaveDashboard = ({ leaveRequests = [], onUpdateStatus = () => {} }) 
     </div>
   );
 };
-
 
 export default AdminLeaveDashboard;
