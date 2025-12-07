@@ -6,7 +6,7 @@ let departments = [
   { id: 1, name: "HR" },
   { id: 2, name: "IT" },
   { id: 3, name: "Finance" },
-  { id: 4, name: "Operations" },
+  // { id: 4, name: "Operations" },
 ];
 
 // ✅ Get all departments

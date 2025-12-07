@@ -29,8 +29,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default redirect */}
-        <Route path="/" element={<Navigate to="/login" />} />
+        {/* Default page (Landing page will be Register) */}
+        <Route path="/" element={<Register />} />
 
         {/* Public */}
         <Route path="/login" element={<Login />} />
@@ -71,7 +71,7 @@ function App() {
         </Route>
 
         {/* Catch all */}
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );

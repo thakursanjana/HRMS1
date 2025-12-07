@@ -2,8 +2,6 @@ import express from "express";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import cors from "cors";
-import Employee from "../models/employee.js";
-
 const app = express();
 
 // Middlewares
